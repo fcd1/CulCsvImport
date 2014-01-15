@@ -202,7 +202,9 @@ class CsvImportPlugin extends Omeka_Plugin_AbstractPlugin
 
         // Hack to disable CRUD actions.
         $acl->deny(null, 'CsvImport_Index', array('show', 'add', 'edit', 'delete'));
-        $acl->deny('admin', 'CsvImport_Index');
+	// fcd1, 01/14/14
+	// Commented out the call to deny('admin',...) in order to allow admin access
+        // $acl->deny('admin', 'CsvImport_Index');
     }
 
     /**
